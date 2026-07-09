@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Date 💖</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div id="app">
+
+  <section class="screen active" id="screen1">
+    <div class="card">
+      <div class="emoji">🌸</div>
+      <h1>Benimle date'e çıkmak ister misin?</h1>
+      <button onclick="nextScreen(2)">Evet 💗</button>
+    </div>
+  </section>
+
+  <section class="screen" id="screen2">
+    <div class="card">
+      <div class="emoji">📅</div>
+      <h1>Ne zaman müsaitsin?</h1>
+
+      <input type="text" id="dateInput" placeholder="Tarih seç 💗">
+      <input type="time" id="timeInput">
+
+      <button onclick="saveDateTime()">Devam 💌</button>
+      <button class="back-btn" onclick="prevScreen(1)">← Geri</button>
+    </div>
+  </section>
+
+  <section class="screen" id="screen3">
+    <div class="card">
+      <div class="emoji">✨</div>
+      <h1>Ne yapalım?</h1>
+
+      <button onclick="chooseActivity('Yemek')">🍽️ Yemek</button>
+      <button onclick="chooseActivity('Bilardo')">🎱 Bilardo</button>
+      <button onclick="chooseActivity('Cafe')">☕ Cafe</button>
+      <button onclick="chooseActivity('Diğer')">✨ Diğer</button>
+
+      <button class="back-btn" onclick="prevScreen(2)">← Geri</button>
+    </div>
+  </section>
+
+  <section class="screen" id="screen4">
+    <div class="card" id="subOptionsCard"></div>
+  </section>
+
+  <section class="screen" id="screen5">
+    <div class="card">
+      <div class="emoji">💕</div>
+      <h1>Yaaaay!</h1>
+
+      <div id="summary"></div>
+
+      <button onclick="sendAnswer()">Cevabımı gönder 💌</button>
+      <button class="back-btn" onclick="prevScreen(3)">← Düzenle</button>
+
+      <p class="final-text">Sabırsızlıkla bekliyorum 🌷</p>
+    </div>
+  </section>
+
+  <section class="screen" id="screen6">
+    <div class="card success-card">
+      <div class="emoji">💕💕💕</div>
+      <h1>Cevabın bana ulaştı.</h1>
+      <p>Artık geri dönüşümü bekle 💋💋💋</p>
+    </div>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/tr.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

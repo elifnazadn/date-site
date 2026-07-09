@@ -1,0 +1,258 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  
+  body{
+    min-height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffe6ef,#ffd9ea);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  .hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+  }
+  
+  .heart{
+    position:absolute;
+    top:-40px;
+    color:#e889b8;
+    opacity:.65;
+    animation:fall linear infinite;
+  }
+  
+  @keyframes fall{
+    to{
+      transform:translateY(110vh) rotate(360deg);
+    }
+  }
+  
+  #app{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100vh;
+  }
+  
+  .screen{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transform:translateX(60px);
+    transition:.45s ease;
+  }
+  
+  .screen.active{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateX(0);
+  }
+  
+  .screen.back{
+    transform:translateX(-60px);
+  }
+  
+  .card{
+    width:430px;
+    max-width:92vw;
+    background:rgba(255,255,255,.92);
+    padding:40px;
+    border-radius:30px;
+    box-shadow:0 18px 45px rgba(160,70,110,.2);
+    text-align:center;
+    backdrop-filter:blur(12px);
+  }
+  
+  .emoji{
+    font-size:48px;
+    margin-bottom:18px;
+  }
+  
+  h1{
+    color:#c64d89;
+    margin-bottom:28px;
+    font-size:32px;
+  }
+  
+  button{
+    width:100%;
+    border:none;
+    background:#d865a5;
+    color:white;
+    padding:17px;
+    margin-top:14px;
+    border-radius:999px;
+    font-size:19px;
+    cursor:pointer;
+    transition:.25s;
+  }
+  
+  button:hover{
+    background:#c74d94;
+    transform:scale(1.02);
+  }
+  
+  .back-btn{
+    background:#fff;
+    color:#c64d89;
+    border:2px solid #f2c4da;
+  }
+  
+  .back-btn:hover{
+    background:#ffeaf3;
+  }
+  
+  input, textarea{
+    width:100%;
+    padding:16px;
+    margin:12px 0;
+    border-radius:16px;
+    border:2px solid #f2c4da;
+    font-size:17px;
+    outline:none;
+    background:#fffafd;
+  }
+  
+  textarea{
+    min-height:110px;
+    resize:none;
+  }
+  
+  input:focus, textarea:focus{
+    border-color:#d865a5;
+  }
+  
+  .option-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:20px;
+  }
+  
+  .option-grid button{
+    margin:0;
+  }
+  
+  #summary{
+    background:#fff5fa;
+    border-radius:18px;
+    padding:20px;
+    margin:25px 0;
+    color:#b34781;
+    line-height:2;
+    font-size:18px;
+    text-align:left;
+  }
+  
+  .final-text{
+    color:#c64d89;
+    margin-top:16px;
+    font-size:19px;
+  }
+  
+  .success-card p{
+    color:#b34781;
+    font-size:22px;
+    line-height:1.7;
+  }
+  
+  .flatpickr-calendar{
+    border-radius:20px !important;
+    box-shadow:0 18px 45px rgba(160,70,110,.2) !important;
+    border:none !important;
+  }
+  
+  .flatpickr-day.selected,
+  .flatpickr-day.startRange,
+  .flatpickr-day.endRange{
+    background:#d865a5 !important;
+    border-color:#d865a5 !important;
+  }
+  
+  .flatpickr-day.today{
+    border-color:#d865a5 !important;
+  }
+  
+  .confetti{
+    position:fixed;
+    top:-20px;
+    font-size:24px;
+    animation:confettiFall 2.4s linear forwards;
+    z-index:10;
+    pointer-events:none;
+  }
+  
+  @keyframes confettiFall{
+    to{
+      transform:translateY(110vh) rotate(720deg);
+      opacity:0;
+    }
+  }
+  
+  @media(max-width:520px){
+    .card{
+      padding:28px;
+    }
+  
+    h1{
+      font-size:27px;
+    }
+  
+    button{
+      font-size:17px;
+    }
+  }
+/* ===== MOBİL DÜZELTME ===== */
+
+@media screen and (max-width: 600px) {
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .screen{
+        width:100%;
+        min-height:100dvh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px 15px;
+        box-sizing:border-box;
+    }
+
+    .card{
+        width:100%;
+        max-width:380px;
+        padding:28px 22px;
+        border-radius:28px;
+        margin:auto;
+        box-sizing:border-box;
+    }
+
+    input,
+    textarea,
+    button{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .success-card{
+        width:100%;
+        max-width:380px;
+        margin:auto;
+    }
+
+}
