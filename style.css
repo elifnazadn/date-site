@@ -215,44 +215,85 @@
       font-size:17px;
     }
   }
-/* ===== MOBİL DÜZELTME ===== */
+/* ===== MOBİL NET DÜZELTME ===== */
 
 @media screen and (max-width: 600px) {
 
-    body{
-        overflow-x:hidden;
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
     }
-
-    .screen{
-        width:100%;
-        min-height:100dvh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        padding:20px 15px;
-        box-sizing:border-box;
+  
+    body {
+      display: block;
+      overflow-y: auto;
     }
-
-    .card{
-        width:100%;
-        max-width:380px;
-        padding:28px 22px;
-        border-radius:28px;
-        margin:auto;
-        box-sizing:border-box;
+  
+    #app {
+      width: 100%;
+      min-height: 100svh;
+      height: auto;
     }
-
-    input,
-    textarea,
-    button{
-        width:100%;
-        box-sizing:border-box;
+  
+    .screen {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      min-height: 100svh;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 18px 120px;
+      box-sizing: border-box;
     }
-
-    .success-card{
-        width:100%;
-        max-width:380px;
-        margin:auto;
+  
+    .card {
+      width: 100%;
+      max-width: 360px;
+      padding: 26px 22px;
+      border-radius: 28px;
+      margin: 0 auto;
+      box-sizing: border-box;
     }
-
-}
+  
+    h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+  
+    input, textarea, button {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  
+    #summary {
+      font-size: 17px;
+    }
+  
+    .success-card {
+      max-width: 360px;
+      padding: 28px 20px;
+    }
+  
+    .success-card h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+  
+    .success-card p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  
+    .confetti {
+      z-index: 1;
+    }
+  
+    .card {
+      position: relative;
+      z-index: 3;
+    }
+  }
